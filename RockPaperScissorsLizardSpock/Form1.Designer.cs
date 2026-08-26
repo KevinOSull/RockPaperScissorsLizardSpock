@@ -28,12 +28,393 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            headingLabel = new Label();
+            rockButton = new Button();
+            Paper = new Button();
+            scissorsButton = new Button();
+            lizardButton = new Button();
+            spockButton = new Button();
+            resetButton = new Button();
+            exitButton = new Button();
+            bestOfFiveButton = new Button();
+            bestOfThreeButton = new Button();
+            bestOfTenButton = new Button();
+            playerRoundScore = new Label();
+            bestOfThreeLabel = new Label();
+            bestOfTenLabel = new Label();
+            bestOfFiveLabel = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label1 = new Label();
+            label7 = new Label();
+            computerRoundScore = new Label();
+            label9 = new Label();
+            playerScore = new Label();
+            computerScore = new Label();
+            playerChoice = new PictureBox();
+            computerChoice = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)playerChoice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)computerChoice).BeginInit();
+            SuspendLayout();
+            // 
+            // headingLabel
+            // 
+            headingLabel.Font = new Font("Snap ITC", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            headingLabel.Location = new Point(85, 9);
+            headingLabel.Name = "headingLabel";
+            headingLabel.Size = new Size(635, 49);
+            headingLabel.TabIndex = 0;
+            headingLabel.Text = "Rock Paper Scissors Lizard Spock";
+            headingLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // rockButton
+            // 
+            rockButton.BackgroundImage = (Image)resources.GetObject("rockButton.BackgroundImage");
+            rockButton.BackgroundImageLayout = ImageLayout.Stretch;
+            rockButton.FlatAppearance.BorderSize = 0;
+            rockButton.FlatStyle = FlatStyle.Flat;
+            rockButton.Location = new Point(27, 61);
+            rockButton.Name = "rockButton";
+            rockButton.Size = new Size(148, 54);
+            rockButton.TabIndex = 1;
+            rockButton.Text = "Rock";
+            rockButton.UseVisualStyleBackColor = true;
+            // 
+            // Paper
+            // 
+            Paper.BackgroundImage = (Image)resources.GetObject("Paper.BackgroundImage");
+            Paper.BackgroundImageLayout = ImageLayout.Stretch;
+            Paper.FlatAppearance.BorderSize = 0;
+            Paper.FlatStyle = FlatStyle.Flat;
+            Paper.Location = new Point(181, 61);
+            Paper.Name = "Paper";
+            Paper.Size = new Size(148, 54);
+            Paper.TabIndex = 2;
+            Paper.Text = "Paper";
+            Paper.UseVisualStyleBackColor = true;
+            // 
+            // scissorsButton
+            // 
+            scissorsButton.BackgroundImage = (Image)resources.GetObject("scissorsButton.BackgroundImage");
+            scissorsButton.BackgroundImageLayout = ImageLayout.Stretch;
+            scissorsButton.FlatAppearance.BorderSize = 0;
+            scissorsButton.FlatStyle = FlatStyle.Flat;
+            scissorsButton.Location = new Point(335, 61);
+            scissorsButton.Name = "scissorsButton";
+            scissorsButton.Size = new Size(148, 54);
+            scissorsButton.TabIndex = 3;
+            scissorsButton.Text = "Scissors";
+            scissorsButton.UseVisualStyleBackColor = true;
+            // 
+            // lizardButton
+            // 
+            lizardButton.BackgroundImage = (Image)resources.GetObject("lizardButton.BackgroundImage");
+            lizardButton.BackgroundImageLayout = ImageLayout.Stretch;
+            lizardButton.FlatAppearance.BorderSize = 0;
+            lizardButton.FlatStyle = FlatStyle.Flat;
+            lizardButton.Location = new Point(489, 61);
+            lizardButton.Name = "lizardButton";
+            lizardButton.Size = new Size(148, 54);
+            lizardButton.TabIndex = 4;
+            lizardButton.Text = "Lizard";
+            lizardButton.UseVisualStyleBackColor = true;
+            // 
+            // spockButton
+            // 
+            spockButton.BackgroundImage = (Image)resources.GetObject("spockButton.BackgroundImage");
+            spockButton.BackgroundImageLayout = ImageLayout.Stretch;
+            spockButton.FlatAppearance.BorderSize = 0;
+            spockButton.FlatStyle = FlatStyle.Flat;
+            spockButton.Location = new Point(640, 60);
+            spockButton.Name = "spockButton";
+            spockButton.Size = new Size(148, 55);
+            spockButton.TabIndex = 5;
+            spockButton.Text = "spock";
+            spockButton.UseVisualStyleBackColor = true;
+            // 
+            // resetButton
+            // 
+            resetButton.BackgroundImage = (Image)resources.GetObject("resetButton.BackgroundImage");
+            resetButton.BackgroundImageLayout = ImageLayout.Stretch;
+            resetButton.FlatAppearance.BorderSize = 0;
+            resetButton.FlatStyle = FlatStyle.Flat;
+            resetButton.Location = new Point(27, 161);
+            resetButton.Name = "resetButton";
+            resetButton.Size = new Size(148, 54);
+            resetButton.TabIndex = 6;
+            resetButton.Text = "Reset";
+            resetButton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            exitButton.BackgroundImage = (Image)resources.GetObject("exitButton.BackgroundImage");
+            exitButton.BackgroundImageLayout = ImageLayout.Stretch;
+            exitButton.FlatAppearance.BorderSize = 0;
+            exitButton.FlatStyle = FlatStyle.Flat;
+            exitButton.Location = new Point(27, 252);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(148, 54);
+            exitButton.TabIndex = 7;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
+            // 
+            // bestOfFiveButton
+            // 
+            bestOfFiveButton.BackgroundImage = (Image)resources.GetObject("bestOfFiveButton.BackgroundImage");
+            bestOfFiveButton.BackgroundImageLayout = ImageLayout.Stretch;
+            bestOfFiveButton.FlatAppearance.BorderSize = 0;
+            bestOfFiveButton.FlatStyle = FlatStyle.Flat;
+            bestOfFiveButton.Location = new Point(389, 359);
+            bestOfFiveButton.Name = "bestOfFiveButton";
+            bestOfFiveButton.Size = new Size(148, 59);
+            bestOfFiveButton.TabIndex = 8;
+            bestOfFiveButton.Text = "Best Of Five Games";
+            bestOfFiveButton.UseVisualStyleBackColor = true;
+            // 
+            // bestOfThreeButton
+            // 
+            bestOfThreeButton.BackgroundImage = (Image)resources.GetObject("bestOfThreeButton.BackgroundImage");
+            bestOfThreeButton.BackgroundImageLayout = ImageLayout.Stretch;
+            bestOfThreeButton.FlatAppearance.BorderSize = 0;
+            bestOfThreeButton.FlatStyle = FlatStyle.Flat;
+            bestOfThreeButton.Location = new Point(181, 363);
+            bestOfThreeButton.Name = "bestOfThreeButton";
+            bestOfThreeButton.Size = new Size(148, 55);
+            bestOfThreeButton.TabIndex = 9;
+            bestOfThreeButton.Text = "Best Of Three Games";
+            bestOfThreeButton.UseVisualStyleBackColor = true;
+            // 
+            // bestOfTenButton
+            // 
+            bestOfTenButton.BackgroundImage = (Image)resources.GetObject("bestOfTenButton.BackgroundImage");
+            bestOfTenButton.BackgroundImageLayout = ImageLayout.Stretch;
+            bestOfTenButton.FlatAppearance.BorderSize = 0;
+            bestOfTenButton.FlatStyle = FlatStyle.Flat;
+            bestOfTenButton.Location = new Point(572, 359);
+            bestOfTenButton.Name = "bestOfTenButton";
+            bestOfTenButton.Size = new Size(148, 59);
+            bestOfTenButton.TabIndex = 10;
+            bestOfTenButton.Text = "Best Of Ten Games";
+            bestOfTenButton.UseVisualStyleBackColor = true;
+            // 
+            // playerRoundScore
+            // 
+            playerRoundScore.Location = new Point(216, 329);
+            playerRoundScore.Name = "playerRoundScore";
+            playerRoundScore.Size = new Size(15, 15);
+            playerRoundScore.TabIndex = 11;
+            playerRoundScore.Text = "0";
+            // 
+            // bestOfThreeLabel
+            // 
+            bestOfThreeLabel.AutoSize = true;
+            bestOfThreeLabel.Location = new Point(241, 426);
+            bestOfThreeLabel.Name = "bestOfThreeLabel";
+            bestOfThreeLabel.Size = new Size(13, 15);
+            bestOfThreeLabel.TabIndex = 12;
+            bestOfThreeLabel.Text = "0";
+            // 
+            // bestOfTenLabel
+            // 
+            bestOfTenLabel.AutoSize = true;
+            bestOfTenLabel.Location = new Point(640, 426);
+            bestOfTenLabel.Name = "bestOfTenLabel";
+            bestOfTenLabel.Size = new Size(13, 15);
+            bestOfTenLabel.TabIndex = 13;
+            bestOfTenLabel.Text = "0";
+            // 
+            // bestOfFiveLabel
+            // 
+            bestOfFiveLabel.AutoSize = true;
+            bestOfFiveLabel.Location = new Point(454, 426);
+            bestOfFiveLabel.Name = "bestOfFiveLabel";
+            bestOfFiveLabel.Size = new Size(13, 15);
+            bestOfFiveLabel.TabIndex = 14;
+            bestOfFiveLabel.Text = "0";
+            // 
+            // label2
+            // 
+            label2.Location = new Point(168, 329);
+            label2.Name = "label2";
+            label2.Size = new Size(42, 15);
+            label2.TabIndex = 15;
+            label2.Text = "Player";
+            // 
+            // label3
+            // 
+            label3.Location = new Point(197, 314);
+            label3.Name = "label3";
+            label3.Size = new Size(83, 15);
+            label3.TabIndex = 16;
+            label3.Text = "Round Score";
+            // 
+            // label4
+            // 
+            label4.Location = new Point(229, 329);
+            label4.Name = "label4";
+            label4.Size = new Size(14, 15);
+            label4.TabIndex = 17;
+            label4.Text = "-";
+            // 
+            // label5
+            // 
+            label5.Location = new Point(445, 314);
+            label5.Name = "label5";
+            label5.Size = new Size(67, 15);
+            label5.TabIndex = 18;
+            label5.Text = "GameScore";
+            // 
+            // label6
+            // 
+            label6.Location = new Point(415, 329);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 15);
+            label6.TabIndex = 19;
+            label6.Text = "Player";
+            label6.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            label1.Location = new Point(464, 329);
+            label1.Name = "label1";
+            label1.Size = new Size(19, 15);
+            label1.TabIndex = 20;
+            label1.Text = "-";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            label7.Location = new Point(489, 329);
+            label7.Name = "label7";
+            label7.Size = new Size(64, 13);
+            label7.TabIndex = 21;
+            label7.Text = "Computer";
+            label7.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // computerRoundScore
+            // 
+            computerRoundScore.Location = new Point(237, 329);
+            computerRoundScore.Name = "computerRoundScore";
+            computerRoundScore.Size = new Size(17, 15);
+            computerRoundScore.TabIndex = 22;
+            computerRoundScore.Text = "0";
+            // 
+            // label9
+            // 
+            label9.Location = new Point(252, 329);
+            label9.Name = "label9";
+            label9.Size = new Size(63, 15);
+            label9.TabIndex = 23;
+            label9.Text = "Computer";
+            // 
+            // playerScore
+            // 
+            playerScore.Location = new Point(457, 329);
+            playerScore.Name = "playerScore";
+            playerScore.Size = new Size(10, 15);
+            playerScore.TabIndex = 24;
+            playerScore.Text = "0";
+            // 
+            // computerScore
+            // 
+            computerScore.Location = new Point(473, 329);
+            computerScore.Name = "computerScore";
+            computerScore.Size = new Size(12, 15);
+            computerScore.TabIndex = 25;
+            computerScore.Text = "0";
+            // 
+            // playerChoice
+            // 
+            playerChoice.Location = new Point(216, 137);
+            playerChoice.Name = "playerChoice";
+            playerChoice.Size = new Size(114, 141);
+            playerChoice.TabIndex = 26;
+            playerChoice.TabStop = false;
+            // 
+            // computerChoice
+            // 
+            computerChoice.Location = new Point(489, 137);
+            computerChoice.Name = "computerChoice";
+            computerChoice.Size = new Size(118, 141);
+            computerChoice.TabIndex = 27;
+            computerChoice.TabStop = false;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SandyBrown;
             ClientSize = new Size(800, 450);
+            Controls.Add(computerChoice);
+            Controls.Add(playerChoice);
+            Controls.Add(computerScore);
+            Controls.Add(playerScore);
+            Controls.Add(label9);
+            Controls.Add(computerRoundScore);
+            Controls.Add(label7);
+            Controls.Add(label1);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(bestOfFiveLabel);
+            Controls.Add(bestOfTenLabel);
+            Controls.Add(bestOfThreeLabel);
+            Controls.Add(playerRoundScore);
+            Controls.Add(bestOfTenButton);
+            Controls.Add(bestOfThreeButton);
+            Controls.Add(bestOfFiveButton);
+            Controls.Add(exitButton);
+            Controls.Add(resetButton);
+            Controls.Add(spockButton);
+            Controls.Add(lizardButton);
+            Controls.Add(scissorsButton);
+            Controls.Add(Paper);
+            Controls.Add(rockButton);
+            Controls.Add(headingLabel);
+            Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)playerChoice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)computerChoice).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label headingLabel;
+        private Button rockButton;
+        private Button Paper;
+        private Button scissorsButton;
+        private Button lizardButton;
+        private Button spockButton;
+        private Button resetButton;
+        private Button exitButton;
+        private Button bestOfFiveButton;
+        private Button bestOfThreeButton;
+        private Button bestOfTenButton;
+        private Label playerRoundScore;
+        private Label bestOfThreeLabel;
+        private Label bestOfTenLabel;
+        private Label bestOfFiveLabel;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label1;
+        private Label label7;
+        private Label computerRoundScore;
+        private Label label9;
+        private Label playerScore;
+        private Label computerScore;
+        private PictureBox playerChoice;
+        private PictureBox computerChoice;
     }
 }
