@@ -1,0 +1,3 @@
+computerWon=COMPUTER WINS
+playerWon=PLAYER WINS
+gameIsDraw=ITS A DRAW
