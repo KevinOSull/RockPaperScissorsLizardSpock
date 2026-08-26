@@ -52,6 +52,7 @@ namespace RockPaperScissorsLizardSpock
         public Form1()
         {
             InitializeComponent();
+            //LoadMessagesTextFile();
             InitializeGameState();
 
         }
@@ -67,6 +68,31 @@ namespace RockPaperScissorsLizardSpock
             gameLabels = InitArray(playerScore, computerScore);
             gameFlowLabels = InitArray(playerChoice,computerChoice);
             SetButtonState(gameFlowButtons, false, "Resources/button_bg2.png");
+        }
+
+        private void LoadMessagesTextFile()
+        {
+            try
+            {
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"GameData", "winConditions.txt");
+                using StreamReader reader = new(filePath);
+                string? line;
+                while((line = reader.ReadLine()) != null)
+                {
+                    if (line.Contains('='))
+                    {
+                        string[] values = line.Split('=');
+                        if(values.Length == 2)
+                        {
+                            winConditionRules.Add(values[0].Trim(), values[1].Trim());
+                            MessageBox.Show("FILE READ");
+                        }
+                    }
+                }
+            }catch(IOException e)
+            {
+                MessageBox.Show("THE FILE CANNOT BE READ! " + e.Message);
+            }
         }
 
         private void SetButtonState(Button[]button,bool isEnabled,string imageFilePath)
