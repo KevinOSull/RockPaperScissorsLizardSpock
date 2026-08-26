@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             headingLabel = new Label();
             rockButton = new Button();
-            Paper = new Button();
+            paperButton = new Button();
             scissorsButton = new Button();
             lizardButton = new Button();
             spockButton = new Button();
@@ -84,18 +84,18 @@
             rockButton.Text = "Rock";
             rockButton.UseVisualStyleBackColor = true;
             // 
-            // Paper
+            // paperButton
             // 
-            Paper.BackgroundImage = (Image)resources.GetObject("Paper.BackgroundImage");
-            Paper.BackgroundImageLayout = ImageLayout.Stretch;
-            Paper.FlatAppearance.BorderSize = 0;
-            Paper.FlatStyle = FlatStyle.Flat;
-            Paper.Location = new Point(181, 61);
-            Paper.Name = "Paper";
-            Paper.Size = new Size(148, 54);
-            Paper.TabIndex = 2;
-            Paper.Text = "Paper";
-            Paper.UseVisualStyleBackColor = true;
+            paperButton.BackgroundImage = (Image)resources.GetObject("paperButton.BackgroundImage");
+            paperButton.BackgroundImageLayout = ImageLayout.Stretch;
+            paperButton.FlatAppearance.BorderSize = 0;
+            paperButton.FlatStyle = FlatStyle.Flat;
+            paperButton.Location = new Point(181, 61);
+            paperButton.Name = "paperButton";
+            paperButton.Size = new Size(148, 54);
+            paperButton.TabIndex = 2;
+            paperButton.Text = "Paper";
+            paperButton.UseVisualStyleBackColor = true;
             // 
             // scissorsButton
             // 
@@ -375,7 +375,7 @@
             Controls.Add(spockButton);
             Controls.Add(lizardButton);
             Controls.Add(scissorsButton);
-            Controls.Add(Paper);
+            Controls.Add(paperButton);
             Controls.Add(rockButton);
             Controls.Add(headingLabel);
             Name = "Form1";
@@ -390,7 +390,7 @@
 
         private Label headingLabel;
         private Button rockButton;
-        private Button Paper;
+        private Button paperButton;
         private Button scissorsButton;
         private Button lizardButton;
         private Button spockButton;
