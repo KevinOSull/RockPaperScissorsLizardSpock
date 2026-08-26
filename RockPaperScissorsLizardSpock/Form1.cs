@@ -1,6 +1,7 @@
 using System.Drawing;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
+using System.Diagnostics;
 
 namespace RockPaperScissorsLizardSpock
 {
@@ -45,17 +46,35 @@ namespace RockPaperScissorsLizardSpock
         private Label activeLabel;
         private Label activeScoreLabel;
         private Label activeScoreRoundLabel;
-
-
-
-
+        
         public Form1()
         {
             InitializeComponent();
+            InitializeGameState();
 
         }
 
-        
+        private void InitializeGameState()
+        {
+            numberOfGamesLabel = InitArray(bestOfThreeLabel, bestOfFiveLabel, bestOfTenLabel);
+            numberOfGamesButton = InitArray(bestOfThreeButton, bestOfFiveButton, bestOfTenButton);
+            gameFlowButtons = InitArray(rockButton, paperButton, scissorsButton, lizardButton, spockButton);
+            gameScores = new int[2];
+            gameRoundScores = new int[2];
+            gameRoundLabels = InitArray(playerRoundScore, computerRoundScore);
+            gameLabels = InitArray(playerScore, computerScore);
+            gameFlowLabels = InitArray(playerChoice,computerChoice);
+            SetButtonState(gameFlowButtons, false, Color.Red);
+        }
+
+        private void SetButtonState(Button[]button,bool isEnabled,Color backColor)
+        {
+            for(int i = 0; i < button.Length; i++)
+            {
+                button[i].Enabled = isEnabled;
+                button[i].BackColor = backColor;
+            }
+        }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
@@ -65,6 +84,22 @@ namespace RockPaperScissorsLizardSpock
         private void ExitProgram()
         {
             Application.Exit();
+        }
+
+
+        private Button[] InitArray(params Button[] items)
+        {
+            return items;
+        }
+
+        private Label[] InitArray(params Label[] items)
+        {
+            return items;
+        }
+
+        private PictureBox[] InitArray(params PictureBox[] items)
+        {
+            return items;
         }
     }
 }
