@@ -34,6 +34,8 @@ namespace RockPaperScissorsLizardSpock
         private int gameRoundWinnerIndex = -1;
         private string message;
         private string selectedModel;
+        private string blueButtonImagePath = "Resources/button_bg.png";
+        private string redButtonImagePath = "Resources/button_bg2.png";
 
         private Label[] numberOfGamesLabel;
         private Button[] numberOfGamesButton;
@@ -64,15 +66,16 @@ namespace RockPaperScissorsLizardSpock
             gameRoundLabels = InitArray(playerRoundScore, computerRoundScore);
             gameLabels = InitArray(playerScore, computerScore);
             gameFlowLabels = InitArray(playerChoice,computerChoice);
-            SetButtonState(gameFlowButtons, false, Color.Red);
+            SetButtonState(gameFlowButtons, false, "Resources/button_bg2.png");
         }
 
-        private void SetButtonState(Button[]button,bool isEnabled,Color backColor)
+        private void SetButtonState(Button[]button,bool isEnabled,string imageFilePath)
         {
-            for(int i = 0; i < button.Length; i++)
+            Image backGroundImage = Image.FromFile(imageFilePath);
+            for (int i = 0; i < button.Length; i++)
             {
                 button[i].Enabled = isEnabled;
-                button[i].BackColor = backColor;
+                button[i].BackgroundImage = backGroundImage;
             }
         }
 
