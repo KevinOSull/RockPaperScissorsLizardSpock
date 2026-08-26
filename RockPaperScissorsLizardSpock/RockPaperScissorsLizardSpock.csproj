@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\button_bg2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\button_bg2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="GameData\" />
   </ItemGroup>
 
