@@ -9,6 +9,8 @@ namespace RockPaperScissorsLizardSpock
 
         private GameStatus gameStatus;
         private const int BEST_OF_THREE_GAMES = 3;
+        private const int BEST_OF_FIVE_GAMES = 5;
+        private const int BEST_OF_TEN_GAMES = 10;
         public Form1()
         {
             InitializeComponent();
