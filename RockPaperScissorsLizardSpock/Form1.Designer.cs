@@ -77,6 +77,7 @@
             rockButton.BackgroundImageLayout = ImageLayout.Stretch;
             rockButton.FlatAppearance.BorderSize = 0;
             rockButton.FlatStyle = FlatStyle.Flat;
+            rockButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rockButton.Location = new Point(27, 61);
             rockButton.Name = "rockButton";
             rockButton.Size = new Size(148, 54);
@@ -90,6 +91,7 @@
             paperButton.BackgroundImageLayout = ImageLayout.Stretch;
             paperButton.FlatAppearance.BorderSize = 0;
             paperButton.FlatStyle = FlatStyle.Flat;
+            paperButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             paperButton.Location = new Point(181, 61);
             paperButton.Name = "paperButton";
             paperButton.Size = new Size(148, 54);
@@ -103,6 +105,7 @@
             scissorsButton.BackgroundImageLayout = ImageLayout.Stretch;
             scissorsButton.FlatAppearance.BorderSize = 0;
             scissorsButton.FlatStyle = FlatStyle.Flat;
+            scissorsButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             scissorsButton.Location = new Point(335, 61);
             scissorsButton.Name = "scissorsButton";
             scissorsButton.Size = new Size(148, 54);
@@ -116,6 +119,7 @@
             lizardButton.BackgroundImageLayout = ImageLayout.Stretch;
             lizardButton.FlatAppearance.BorderSize = 0;
             lizardButton.FlatStyle = FlatStyle.Flat;
+            lizardButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lizardButton.Location = new Point(489, 61);
             lizardButton.Name = "lizardButton";
             lizardButton.Size = new Size(148, 54);
@@ -129,11 +133,12 @@
             spockButton.BackgroundImageLayout = ImageLayout.Stretch;
             spockButton.FlatAppearance.BorderSize = 0;
             spockButton.FlatStyle = FlatStyle.Flat;
+            spockButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             spockButton.Location = new Point(640, 60);
             spockButton.Name = "spockButton";
             spockButton.Size = new Size(148, 55);
             spockButton.TabIndex = 5;
-            spockButton.Text = "spock";
+            spockButton.Text = "Spock";
             spockButton.UseVisualStyleBackColor = true;
             // 
             // resetButton
@@ -142,6 +147,7 @@
             resetButton.BackgroundImageLayout = ImageLayout.Stretch;
             resetButton.FlatAppearance.BorderSize = 0;
             resetButton.FlatStyle = FlatStyle.Flat;
+            resetButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             resetButton.Location = new Point(27, 161);
             resetButton.Name = "resetButton";
             resetButton.Size = new Size(148, 54);
@@ -155,6 +161,7 @@
             exitButton.BackgroundImageLayout = ImageLayout.Stretch;
             exitButton.FlatAppearance.BorderSize = 0;
             exitButton.FlatStyle = FlatStyle.Flat;
+            exitButton.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             exitButton.Location = new Point(27, 252);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(148, 54);
@@ -169,6 +176,7 @@
             bestOfFiveButton.BackgroundImageLayout = ImageLayout.Stretch;
             bestOfFiveButton.FlatAppearance.BorderSize = 0;
             bestOfFiveButton.FlatStyle = FlatStyle.Flat;
+            bestOfFiveButton.Font = new Font("Sitka Text", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bestOfFiveButton.Location = new Point(389, 359);
             bestOfFiveButton.Name = "bestOfFiveButton";
             bestOfFiveButton.Size = new Size(148, 59);
@@ -182,6 +190,7 @@
             bestOfThreeButton.BackgroundImageLayout = ImageLayout.Stretch;
             bestOfThreeButton.FlatAppearance.BorderSize = 0;
             bestOfThreeButton.FlatStyle = FlatStyle.Flat;
+            bestOfThreeButton.Font = new Font("Sitka Text", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bestOfThreeButton.Location = new Point(181, 363);
             bestOfThreeButton.Name = "bestOfThreeButton";
             bestOfThreeButton.Size = new Size(148, 55);
@@ -195,6 +204,7 @@
             bestOfTenButton.BackgroundImageLayout = ImageLayout.Stretch;
             bestOfTenButton.FlatAppearance.BorderSize = 0;
             bestOfTenButton.FlatStyle = FlatStyle.Flat;
+            bestOfTenButton.Font = new Font("Sitka Text", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bestOfTenButton.Location = new Point(572, 359);
             bestOfTenButton.Name = "bestOfTenButton";
             bestOfTenButton.Size = new Size(148, 59);
