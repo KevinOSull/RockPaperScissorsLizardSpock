@@ -123,6 +123,14 @@ namespace RockPaperScissorsLizardSpock
             Application.Exit();
         }
 
+        private void InitializeGamePlayButtonsListener()
+        {
+            for(int i = 0; i < gameFlowButtons.Length; i++)
+            {
+                GamePlayButtons(gameFlowButtons[i]);
+            }
+        }
+
         private void InitializeNumberOfGamesButtonsListener()
         {
             for(int i = 0; i < numberOfGamesButton.Length; i++)
@@ -137,6 +145,14 @@ namespace RockPaperScissorsLizardSpock
             {
                 turns = SetNumberOfGames(sender, e);
                 turns = level;
+            };
+        }
+
+        private void GamePlayButtons(Button buttons)
+        {
+            buttons.Click += (sender, e) =>
+            {
+
             };
         }
 
