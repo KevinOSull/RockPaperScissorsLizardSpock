@@ -72,6 +72,12 @@ namespace RockPaperScissorsLizardSpock
             SetButtonState(gameFlowButtons, false, "Resources/button_bg2.png");
         }
 
+        private async Task RunDelayedTasks(int timeDelay,Action action)
+        {
+            await Task.Delay(timeDelay);
+            action();
+        }
+
         private void LoadMessagesTextFile()
         {
             try
