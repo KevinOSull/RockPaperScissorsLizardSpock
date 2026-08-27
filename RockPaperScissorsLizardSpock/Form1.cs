@@ -2,6 +2,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 
 namespace RockPaperScissorsLizardSpock
 {
@@ -54,6 +55,7 @@ namespace RockPaperScissorsLizardSpock
         {
             InitializeComponent();
             //LoadMessagesTextFile();
+            gameStatus = GameStatus.GAME_IN_PROGRESS;
             InitializeGameState();
             InitializeNumberOfGamesButtonsListener();
 
@@ -152,8 +154,29 @@ namespace RockPaperScissorsLizardSpock
         {
             buttons.Click += (sender, e) =>
             {
+                if(gameStatus == GameStatus.GAME_IN_PROGRESS)
+                {
 
+                }
             };
+        }
+
+        private void SetChoice(Object sender,EventArgs e)
+        {
+            Object source = sender;
+            for(int i = 0; i < gameFlowButtons.Length; i++)
+            {
+                if(source == gameFlowButtons[i])
+                {
+                    playerChoosenChoice = i;
+                    PrintOutPlayerChoice(gameFlowLabels[0], Images.gameImages[i]);
+                }
+            }
+        }
+
+        private void PrintOutPlayerChoice(PictureBox pb,Image image)
+        {
+            pb.Image = image;
         }
 
         private int SetNumberOfGames(Object sender,EventArgs e)
