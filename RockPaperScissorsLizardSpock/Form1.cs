@@ -20,6 +20,7 @@ namespace RockPaperScissorsLizardSpock
 
         private int[] buttonNumbers = new int[] { BEST_OF_THREE, BEST_OF_FIVE, BEST_OF_TEN };
         private int[] numberOfRounds = new int[] { BEST_OF_THREE_GAMES, BEST_OF_FIVE_GAMES, BEST_OF_TEN_GAMES };
+        private String[] roundNumbers = new String[] { "Best of Three", "Best of Five", "Best of Ten" };
         private Dictionary<string, string> winConditionRules = new Dictionary<string, string>();
 
         private int buttonId;
@@ -33,7 +34,7 @@ namespace RockPaperScissorsLizardSpock
         private int gameWinnerIndex = -1;
         private int gameRoundWinnerIndex = -1;
         private string message;
-        private string selectedModel;
+        private string selectedMode;
         private string blueButtonImagePath = "Resources/button_bg.png";
         private string redButtonImagePath = "Resources/button_bg2.png";
 
@@ -54,6 +55,7 @@ namespace RockPaperScissorsLizardSpock
             InitializeComponent();
             //LoadMessagesTextFile();
             InitializeGameState();
+            InitializeNumberOfGamesButtonsListener();
 
         }
 
@@ -113,6 +115,62 @@ namespace RockPaperScissorsLizardSpock
         private void ExitProgram()
         {
             Application.Exit();
+        }
+
+        private void InitializeNumberOfGamesButtonsListener()
+        {
+            for(int i = 0; i < numberOfGamesButton.Length; i++)
+            {
+                NumberOfGamesButtonListener(numberOfGamesButton[i]);
+            }
+        }
+
+        private void NumberOfGamesButtonListener(Button buttons)
+        {
+            buttons.Click += (sender, e) =>
+            {
+                turns = SetNumberOfGames(sender, e);
+                turns = level;
+            };
+        }
+
+        private int SetNumberOfGames(Object sender,EventArgs e)
+        {
+            Object source = sender;
+            for(int i = 0; i < numberOfGamesButton.Length; i++)
+            {
+                if(source == numberOfGamesButton[i])
+                {
+                    buttonId = buttonNumbers[i];
+                    selectedMode = roundNumbers[i];
+                }
+            }
+            SetButtonState(numberOfGamesButton, false, "Resources/button_bg2.png");
+            SetButtonState(gameFlowButtons, true, "Resources/button_bg.png");
+            turns = ProcessButtonClicked();
+            return buttonId;
+
+        }
+
+        private int ProcessButtonClicked()
+        {
+            for(int i = 0; i < buttonNumbers.Length; i++)
+            {
+                if(buttonId == buttonNumbers[i])
+                {
+                    level = numberOfRounds[i];
+                    roundsRemaining = level;
+                    //targetWins = CalculateTargetWins(level);
+                    activeLabel = numberOfGamesLabel[i];
+                    PrintOutNumberOfGamesSelected(activeLabel, numberOfRounds[i]);
+                }
+            }
+            return buttonId;
+        }
+
+        private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
+        {
+            label.Text = $"{numberOfGames}";
         }
 
 

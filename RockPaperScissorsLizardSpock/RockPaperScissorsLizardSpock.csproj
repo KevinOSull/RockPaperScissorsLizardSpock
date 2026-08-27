@@ -10,11 +10,15 @@
 
   <ItemGroup>
     <None Remove="GameData\winConditions.txt" />
+    <None Remove="Resources\button_bg.png" />
     <None Remove="Resources\button_bg2.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="GameData\winConditions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\button_bg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\button_bg2.png">
