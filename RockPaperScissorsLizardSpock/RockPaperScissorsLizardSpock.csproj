@@ -12,6 +12,11 @@
     <None Remove="GameData\winConditions.txt" />
     <None Remove="Resources\button_bg.png" />
     <None Remove="Resources\button_bg2.png" />
+    <None Remove="Resources\lizard.png" />
+    <None Remove="Resources\paper.jpg" />
+    <None Remove="Resources\rock.jpg" />
+    <None Remove="Resources\scissors.jpg" />
+    <None Remove="Resources\spock.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +27,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\button_bg2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\lizard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\paper.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\rock.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\scissors.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\spock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
