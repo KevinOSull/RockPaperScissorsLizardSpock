@@ -233,12 +233,7 @@ namespace RockPaperScissorsLizardSpock
             }
             return buttonId;
         }
-
-        private int CalculateTargetWins(int totalRounds)
-        {
-            return 0;
-        }
-
+        
         private void CheckWhoWon()
         {
 
@@ -247,6 +242,26 @@ namespace RockPaperScissorsLizardSpock
         private void ClearImageTask()
         {
 
+        }
+
+        private bool HasComputerWon()
+        {
+            return true;
+        }
+
+        private bool HasPlayerWon()
+        {
+            return true;
+        }
+
+        private bool IsGameDrawn()
+        {
+            return true;
+        }
+
+        private int CalculateTargetWins(int totalRounds)
+        {
+            return 0;
         }
 
         private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
