@@ -343,6 +343,7 @@
             playerChoice.Location = new Point(216, 137);
             playerChoice.Name = "playerChoice";
             playerChoice.Size = new Size(114, 141);
+            playerChoice.SizeMode = PictureBoxSizeMode.Zoom;
             playerChoice.TabIndex = 26;
             playerChoice.TabStop = false;
             // 
@@ -351,6 +352,7 @@
             computerChoice.Location = new Point(489, 137);
             computerChoice.Name = "computerChoice";
             computerChoice.Size = new Size(118, 141);
+            computerChoice.SizeMode = PictureBoxSizeMode.Zoom;
             computerChoice.TabIndex = 27;
             computerChoice.TabStop = false;
             // 
