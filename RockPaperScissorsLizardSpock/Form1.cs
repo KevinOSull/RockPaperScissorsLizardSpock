@@ -31,7 +31,7 @@ namespace RockPaperScissorsLizardSpock
         private int totalRounds;
         private int playerChoosenChoice;
         private int computerChoosenChoice;
-        private int targetWin;
+        private int targetWins;
         private int gameWinnerIndex = -1;
         private int gameRoundWinnerIndex = -1;
         private string message;
@@ -158,6 +158,7 @@ namespace RockPaperScissorsLizardSpock
                 if(gameStatus == GameStatus.GAME_IN_PROGRESS)
                 {
                     SetChoice(sender, e);
+                    ResolveRound();
                 }
             };
         }
@@ -198,6 +199,25 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
+        private void ResolveRound()
+        {
+            computerChoosenChoice = GetComputerChoice();
+            SetComputerImage();
+            CheckWhoWon();
+            ClearImageTask();
+
+        }
+
+        private int GetComputerChoice()
+        {
+            return 0;
+        }
+
+        private void SetComputerImage()
+        {
+
+        }
+
         private int ProcessButtonClicked()
         {
             for(int i = 0; i < buttonNumbers.Length; i++)
@@ -206,12 +226,27 @@ namespace RockPaperScissorsLizardSpock
                 {
                     level = numberOfRounds[i];
                     roundsRemaining = level;
-                    //targetWins = CalculateTargetWins(level);
+                    targetWins = CalculateTargetWins(level);
                     activeLabel = numberOfGamesLabel[i];
                     PrintOutNumberOfGamesSelected(activeLabel, numberOfRounds[i]);
                 }
             }
             return buttonId;
+        }
+
+        private int CalculateTargetWins(int totalRounds)
+        {
+            return 0;
+        }
+
+        private void CheckWhoWon()
+        {
+
+        }
+
+        private void ClearImageTask()
+        {
+
         }
 
         private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
