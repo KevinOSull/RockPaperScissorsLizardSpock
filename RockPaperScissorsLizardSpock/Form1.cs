@@ -58,6 +58,7 @@ namespace RockPaperScissorsLizardSpock
             gameStatus = GameStatus.GAME_IN_PROGRESS;
             InitializeGameState();
             InitializeNumberOfGamesButtonsListener();
+            InitializeGamePlayButtonsListener();
 
         }
 
@@ -156,7 +157,7 @@ namespace RockPaperScissorsLizardSpock
             {
                 if(gameStatus == GameStatus.GAME_IN_PROGRESS)
                 {
-
+                    SetChoice(sender, e);
                 }
             };
         }
