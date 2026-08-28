@@ -12,7 +12,7 @@ namespace RockPaperScissorsLizardSpock
             Image.FromFile("Resources/paper.jpg"),
             Image.FromFile("Resources/scissors.jpg"),
             Image.FromFile("Resources/lizard.png"),
-            Image.FromFile("Resources/lizard.png")
+            Image.FromFile("Resources/spock.png")
         };
     }
 }
