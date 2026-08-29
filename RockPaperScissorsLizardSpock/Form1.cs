@@ -244,39 +244,51 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-        private bool HasComputerWon()
+        private void StoreWinningChoice()
         {
-            return (computerChoosenChoice == 0 && playerChoosenChoice == 2) ||
-                  (computerChoosenChoice == 0 && playerChoosenChoice == 3) ||
-                  (computerChoosenChoice == 2 && playerChoosenChoice == 1) ||
-                  (computerChoosenChoice == 2 && playerChoosenChoice == 3) ||
-                  (computerChoosenChoice == 1 && playerChoosenChoice == 0) ||
-                  (computerChoosenChoice == 1 && playerChoosenChoice == 4) ||
-                  (computerChoosenChoice == 3 && playerChoosenChoice == 1) ||
-                  (computerChoosenChoice == 3 && playerChoosenChoice == 4) ||
-                  (computerChoosenChoice == 4 && playerChoosenChoice == 0) ||
-                  (computerChoosenChoice == 4 && playerChoosenChoice == 2);
+            Dictionary<int, int[]> conditions = new Dictionary<int, int[]>
+            {
+                { 0,new int[] {2,3}},
+                { 1,new int[] {0,4}},
+                { 2,new int[] {1,3}},
+                { 3,new int[] {1,4}},
+                { 4,new int[] {0,2}}
+            };
         }
 
-        private bool HasPlayerWon()
-        {
-            return(playerChoosenChoice == 0 && computerChoosenChoice == 3) ||
-                  (playerChoosenChoice == 0 && computerChoosenChoice == 2) ||
-                  (playerChoosenChoice == 2 && computerChoosenChoice == 1) ||
-                  (playerChoosenChoice == 2 && computerChoosenChoice == 3) ||
-                  (playerChoosenChoice == 1 && computerChoosenChoice == 0) ||
-                  (playerChoosenChoice == 1 && computerChoosenChoice == 4) ||
-                  (playerChoosenChoice == 3 && computerChoosenChoice == 1) ||
-                  (playerChoosenChoice == 3 && computerChoosenChoice == 4) ||
-                  (playerChoosenChoice == 4 && computerChoosenChoice == 0) ||
-                  (playerChoosenChoice == 4 && computerChoosenChoice == 2);
+        //private bool HasComputerWon()
+        //{
+        //    return (computerChoosenChoice == 0 && playerChoosenChoice == 2) ||
+        //          (computerChoosenChoice == 0 && playerChoosenChoice == 3) ||
+        //          (computerChoosenChoice == 2 && playerChoosenChoice == 1) ||
+        //          (computerChoosenChoice == 2 && playerChoosenChoice == 3) ||
+        //          (computerChoosenChoice == 1 && playerChoosenChoice == 0) ||
+        //          (computerChoosenChoice == 1 && playerChoosenChoice == 4) ||
+        //          (computerChoosenChoice == 3 && playerChoosenChoice == 1) ||
+        //          (computerChoosenChoice == 3 && playerChoosenChoice == 4) ||
+        //          (computerChoosenChoice == 4 && playerChoosenChoice == 0) ||
+        //          (computerChoosenChoice == 4 && playerChoosenChoice == 2);
+        //}
 
-        }
+        //private bool HasPlayerWon()
+        //{
+        //    return(playerChoosenChoice == 0 && computerChoosenChoice == 3) ||
+        //          (playerChoosenChoice == 0 && computerChoosenChoice == 2) ||
+        //          (playerChoosenChoice == 2 && computerChoosenChoice == 1) ||
+        //          (playerChoosenChoice == 2 && computerChoosenChoice == 3) ||
+        //          (playerChoosenChoice == 1 && computerChoosenChoice == 0) ||
+        //          (playerChoosenChoice == 1 && computerChoosenChoice == 4) ||
+        //          (playerChoosenChoice == 3 && computerChoosenChoice == 1) ||
+        //          (playerChoosenChoice == 3 && computerChoosenChoice == 4) ||
+        //          (playerChoosenChoice == 4 && computerChoosenChoice == 0) ||
+        //          (playerChoosenChoice == 4 && computerChoosenChoice == 2);
 
-        private bool IsGameDrawn()
-        {
-            return playerChoosenChoice == computerChoosenChoice;
-        }
+        //}
+
+        //private bool IsGameDrawn()
+        //{
+        //    return playerChoosenChoice == computerChoosenChoice;
+        //}
 
         private int CalculateTargetWins(int totalRounds)
         {
