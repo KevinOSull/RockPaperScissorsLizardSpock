@@ -23,6 +23,7 @@ namespace RockPaperScissorsLizardSpock
         private int[] numberOfRounds = new int[] { BEST_OF_THREE_GAMES, BEST_OF_FIVE_GAMES, BEST_OF_TEN_GAMES };
         private String[] roundNumbers = new String[] { "Best of Three", "Best of Five", "Best of Ten" };
         private Dictionary<string, string> winConditionRules = new Dictionary<string, string>();
+        private Dictionary<int, int[]> conditions;
 
         private int buttonId;
         private int level;
@@ -246,7 +247,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void StoreWinningChoice()
         {
-            Dictionary<int, int[]> conditions = new Dictionary<int, int[]>
+            conditions = new Dictionary<int, int[]>
             {
                 { 0,new int[] {2,3}},
                 { 1,new int[] {0,4}},
@@ -254,6 +255,16 @@ namespace RockPaperScissorsLizardSpock
                 { 3,new int[] {1,4}},
                 { 4,new int[] {0,2}}
             };
+        }
+
+        private bool HasComputerWon()
+        {
+           return conditions[computerChoosenChoice].Contains(playerChoosenChoice);
+        }
+
+        private bool HasPlayerWon()
+        {
+            return conditions[playerChoosenChoice].Contains(computerChoosenChoice);
         }
 
         //private bool HasComputerWon()
