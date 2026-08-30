@@ -65,6 +65,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void InitializeGameState()
         {
+            InitializeWinningConditions();
             numberOfGamesLabel = InitArray(bestOfThreeLabel, bestOfFiveLabel, bestOfTenLabel);
             numberOfGamesButton = InitArray(bestOfThreeButton, bestOfFiveButton, bestOfTenButton);
             gameFlowButtons = InitArray(rockButton, paperButton, scissorsButton, lizardButton, spockButton);
@@ -234,18 +235,8 @@ namespace RockPaperScissorsLizardSpock
             }
             return buttonId;
         }
-        
-        private void CheckWhoWon()
-        {
 
-        }
-
-        private void ClearImageTask()
-        {
-
-        }
-
-        private void StoreWinningChoice()
+        private void InitializeWinningConditions()
         {
             conditions = new Dictionary<int, int[]>
             {
@@ -257,6 +248,46 @@ namespace RockPaperScissorsLizardSpock
             };
         }
 
+        private void CheckWhoWon()
+        {
+            Dictionary<string, Func<bool>> winConditions = new Dictionary<string, Func<bool>>
+            {
+                { GetGameMessage("computerWon"),()=>HasComputerWon()},
+                { GetGameMessage("playerWon"),()=>HasPlayerWon() },
+                { GetGameMessage("gameIsDraw"),()=>IsGameDrawn() }
+            };
+            foreach(var gameCondition in winConditions)
+            {
+                if (gameCondition.Value())
+                {
+                    PrintOutWhoWonGame(gameCondition.Key);
+                    ScheduleClearScreenText();
+                    int winnerResultIndex = GetWinnerIndex();
+                    UpdateScores(gameScores, gameLabels, winnerResultIndex);
+                    CheckRoundWinner();
+                    break;
+                }
+            }
+        }
+
+        private string GetGameMessage(string key)
+        {
+            return "";
+        }
+
+        private async void ClearImageTask()
+        {
+            await RunDelayedTasks(3000, ResetGameImage);
+        }
+
+        private async void ScheduleClearScreenText()
+        {
+            await RunDelayedTasks(3000, () =>
+            {
+                PrintOutWhoWonGame("");
+            });
+        }
+
         private bool HasComputerWon()
         {
            return conditions[computerChoosenChoice].Contains(playerChoosenChoice);
@@ -266,6 +297,68 @@ namespace RockPaperScissorsLizardSpock
         {
             return conditions[playerChoosenChoice].Contains(computerChoosenChoice);
         }
+
+        private bool IsGameDrawn()
+        {
+            return computerChoosenChoice == playerChoosenChoice;
+        }
+
+       
+
+        private int CalculateTargetWins(int totalRounds)
+        {
+            return 0;
+        }
+
+        private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
+        {
+            label.Text = $"{numberOfGames}";
+        }
+
+        private void PrintOutWhoWonGame(string message)
+        {
+
+        }
+
+        private int GetWinnerIndex()
+        {
+            return 0;
+        }
+
+        private void CheckRoundWinner()
+        {
+
+        }
+
+        private void UpdateScores(int[] scores, Label[]scoreLabel,int index)
+        {
+
+        }
+
+        private void ResetGameImage()
+        {
+
+        }
+
+
+        private Button[] InitArray(params Button[] items)
+        {
+            return items;
+        }
+
+        private Label[] InitArray(params Label[] items)
+        {
+            return items;
+        }
+
+        private PictureBox[] InitArray(params PictureBox[] items)
+        {
+            return items;
+        }
+
+
+
+
 
         //private bool HasComputerWon()
         //{
@@ -300,31 +393,5 @@ namespace RockPaperScissorsLizardSpock
         //{
         //    return playerChoosenChoice == computerChoosenChoice;
         //}
-
-        private int CalculateTargetWins(int totalRounds)
-        {
-            return 0;
-        }
-
-        private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
-        {
-            label.Text = $"{numberOfGames}";
-        }
-
-
-        private Button[] InitArray(params Button[] items)
-        {
-            return items;
-        }
-
-        private Label[] InitArray(params Label[] items)
-        {
-            return items;
-        }
-
-        private PictureBox[] InitArray(params PictureBox[] items)
-        {
-            return items;
-        }
     }
 }
