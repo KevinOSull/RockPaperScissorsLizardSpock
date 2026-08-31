@@ -154,6 +154,7 @@
             resetButton.TabIndex = 6;
             resetButton.Text = "Reset";
             resetButton.UseVisualStyleBackColor = true;
+            resetButton.Click += resetButton_Click;
             // 
             // exitButton
             // 
