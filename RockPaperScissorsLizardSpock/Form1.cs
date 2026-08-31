@@ -330,12 +330,20 @@ namespace RockPaperScissorsLizardSpock
 
         private void PrintOutWhoWonGame(string message)
         {
-
+            printOutWhoWonLabel.Text = message;
         }
 
         private int GetWinnerIndex()
         {
-            return 0;
+            int winnerIndex = gameWinnerIndex;
+            if (HasPlayerWon())
+            {
+                return winnerIndex = 0;
+            }else if (HasComputerWon())
+            {
+                return winnerIndex = 1;
+            }
+            return -1;
         }
 
         private void CheckRoundWinner()
@@ -347,8 +355,8 @@ namespace RockPaperScissorsLizardSpock
                     UpdateScores(gameRoundScores, gameRoundLabels, i);
                     roundsRemaining--;
                     ResetScores(gameScores, gameLabels);
-                    PrintOutCurrentScores(gameScores[0], gameLabel[0]);
-                    PrintOutCurrentScores(gameScores[1], gameLabel[1]);
+                    PrintOutCurrentScores(gameScores[0], gameLabels[0]);
+                    PrintOutCurrentScores(gameScores[1], gameLabels[1]);
                     PrintOutNumberOfGamesSelected(activeLabel, roundsRemaining);
                     CheckRoundTurns();
                     break;
