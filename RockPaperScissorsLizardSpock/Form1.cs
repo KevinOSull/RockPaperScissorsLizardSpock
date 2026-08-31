@@ -340,12 +340,49 @@ namespace RockPaperScissorsLizardSpock
 
         private void CheckRoundWinner()
         {
+            for(int i = 0; i<gameScores.Length; i++)
+            {
+                if (gameScores[i] >= level)
+                {
+                    UpdateScores(gameRoundScores, gameRoundLabels, i);
+                    roundsRemaining--;
+                    ResetScores(gameScores, gameLabels);
+                    PrintOutCurrentScores(gameScores[0], gameLabel[0]);
+                    PrintOutCurrentScores(gameScores[1], gameLabel[1]);
+                    PrintOutNumberOfGamesSelected(activeLabel, roundsRemaining);
+                    CheckRoundTurns();
+                    break;
 
+                }
+            }
+        }
+
+        private void CheckRoundTurns()
+        {
+            for(int i = 0; i < gameRoundScores.Length; i++)
+            {
+                if (gameRoundScores[i] >= targetWins)
+                {
+                    gameStatus = GameStatus.GAME_OVER;
+                    PrintOutWhoWonGame("GAME OVER! " + message + "WINS!");
+                    SetButtonState(gameFlowButtons, false, redButtonImagePath);
+                    SetButtonState(numberOfGamesButton, true, blueButtonImagePath);
+                    ResetScores(gameScores, gameLabels);
+                    ResetScores(gameScores, gameRoundLabels);
+                }
+            }
         }
 
         private void UpdateScores(int[] scores, Label[] scoreLabel, int index)
         {
-
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if(i == index)
+                {
+                    scores[i]++;
+                    PrintOutCurrentScores(scores[i], scoreLabel[i]);
+                }
+            }
         }
 
         private void ResetGameImage()
@@ -354,6 +391,20 @@ namespace RockPaperScissorsLizardSpock
             {
                 gameFlowLabels[i].Image = null;
             }
+        }
+
+        private void ResetScores(int[] scores, Label[] label)
+        {
+            for(int i = 0; i < scores.Length; i++)
+            {
+                scores[i] = 0;
+                PrintOutCurrentScores(scores[i], label[i]);
+            }
+        }
+
+        private void PrintOutCurrentScores(int scores,Label label)
+        {
+            label.Text = $"{scores}";
         }
 
 
