@@ -212,12 +212,12 @@ namespace RockPaperScissorsLizardSpock
 
         private int GetComputerChoice()
         {
-            return 0;
+            return RANDOM_GENERATOR.Next(Images.gameImages.Length);
         }
 
         private void SetComputerImage()
         {
-
+            computerChoice.Image = Images.gameImages[computerChoosenChoice];
         }
 
         private int ProcessButtonClicked()
