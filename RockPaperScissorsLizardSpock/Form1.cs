@@ -272,7 +272,14 @@ namespace RockPaperScissorsLizardSpock
 
         private string GetGameMessage(string key)
         {
-            return "";
+            if (winConditionRules.TryGetValue(key, out string? message))
+            {
+                return message;
+            }
+            else
+            {
+                return "MESSAGE NOT FOUND FOR KEY! " + key;
+            }
         }
 
         private async void ClearImageTask()
