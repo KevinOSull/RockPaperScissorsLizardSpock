@@ -314,7 +314,7 @@ namespace RockPaperScissorsLizardSpock
 
         private int CalculateTargetWins(int totalRounds)
         {
-            return 0;
+            return (totalRounds / 2) + 1;
         }
 
         private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
