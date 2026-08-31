@@ -57,6 +57,7 @@
             computerScore = new Label();
             playerChoice = new PictureBox();
             computerChoice = new PictureBox();
+            printOutWhoWonLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)playerChoice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)computerChoice).BeginInit();
             SuspendLayout();
@@ -357,12 +358,22 @@
             computerChoice.TabIndex = 27;
             computerChoice.TabStop = false;
             // 
+            // printOutWhoWonLabel
+            // 
+            printOutWhoWonLabel.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            printOutWhoWonLabel.Location = new Point(335, 283);
+            printOutWhoWonLabel.Name = "printOutWhoWonLabel";
+            printOutWhoWonLabel.Size = new Size(341, 31);
+            printOutWhoWonLabel.TabIndex = 28;
+            printOutWhoWonLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SandyBrown;
             ClientSize = new Size(800, 450);
+            Controls.Add(printOutWhoWonLabel);
             Controls.Add(computerChoice);
             Controls.Add(playerChoice);
             Controls.Add(computerScore);
@@ -429,5 +440,6 @@
         private Label computerScore;
         private PictureBox playerChoice;
         private PictureBox computerChoice;
+        private Label printOutWhoWonLabel;
     }
 }
