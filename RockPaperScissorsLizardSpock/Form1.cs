@@ -51,11 +51,11 @@ namespace RockPaperScissorsLizardSpock
         private Label activeLabel;
         private Label activeScoreLabel;
         private Label activeScoreRoundLabel;
-        
+
         public Form1()
         {
             InitializeComponent();
-            //LoadMessagesTextFile();
+            LoadMessagesTextFile();
             gameStatus = GameStatus.GAME_IN_PROGRESS;
             InitializeGameState();
             InitializeNumberOfGamesButtonsListener();
@@ -73,11 +73,11 @@ namespace RockPaperScissorsLizardSpock
             gameRoundScores = new int[2];
             gameRoundLabels = InitArray(playerRoundScore, computerRoundScore);
             gameLabels = InitArray(playerScore, computerScore);
-            gameFlowLabels = InitArray(playerChoice,computerChoice);
+            gameFlowLabels = InitArray(playerChoice, computerChoice);
             SetButtonState(gameFlowButtons, false, "Resources/button_bg2.png");
         }
 
-        private async Task RunDelayedTasks(int timeDelay,Action action)
+        private async Task RunDelayedTasks(int timeDelay, Action action)
         {
             await Task.Delay(timeDelay);
             action();
@@ -87,28 +87,29 @@ namespace RockPaperScissorsLizardSpock
         {
             try
             {
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"GameData", "winConditions.txt");
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameData", "winConditions.txt");
                 using StreamReader reader = new(filePath);
                 string? line;
-                while((line = reader.ReadLine()) != null)
+                while ((line = reader.ReadLine()) != null)
                 {
                     if (line.Contains('='))
                     {
                         string[] values = line.Split('=');
-                        if(values.Length == 2)
+                        if (values.Length == 2)
                         {
                             winConditionRules.Add(values[0].Trim(), values[1].Trim());
-                            MessageBox.Show("FILE READ");
+                            //MessageBox.Show("FILE READ");
                         }
                     }
                 }
-            }catch(IOException e)
+            }
+            catch (IOException e)
             {
                 MessageBox.Show("THE FILE CANNOT BE READ! " + e.Message);
             }
         }
 
-        private void SetButtonState(Button[]button,bool isEnabled,string imageFilePath)
+        private void SetButtonState(Button[] button, bool isEnabled, string imageFilePath)
         {
             Image backGroundImage = Image.FromFile(imageFilePath);
             for (int i = 0; i < button.Length; i++)
@@ -123,6 +124,11 @@ namespace RockPaperScissorsLizardSpock
             ExitProgram();
         }
 
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ExitProgram()
         {
             Application.Exit();
@@ -130,7 +136,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void InitializeGamePlayButtonsListener()
         {
-            for(int i = 0; i < gameFlowButtons.Length; i++)
+            for (int i = 0; i < gameFlowButtons.Length; i++)
             {
                 GamePlayButtons(gameFlowButtons[i]);
             }
@@ -138,7 +144,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void InitializeNumberOfGamesButtonsListener()
         {
-            for(int i = 0; i < numberOfGamesButton.Length; i++)
+            for (int i = 0; i < numberOfGamesButton.Length; i++)
             {
                 NumberOfGamesButtonListener(numberOfGamesButton[i]);
             }
@@ -157,7 +163,7 @@ namespace RockPaperScissorsLizardSpock
         {
             buttons.Click += (sender, e) =>
             {
-                if(gameStatus == GameStatus.GAME_IN_PROGRESS)
+                if (gameStatus == GameStatus.GAME_IN_PROGRESS)
                 {
                     SetChoice(sender, e);
                     ResolveRound();
@@ -165,12 +171,12 @@ namespace RockPaperScissorsLizardSpock
             };
         }
 
-        private void SetChoice(Object sender,EventArgs e)
+        private void SetChoice(Object sender, EventArgs e)
         {
             Object source = sender;
-            for(int i = 0; i < gameFlowButtons.Length; i++)
+            for (int i = 0; i < gameFlowButtons.Length; i++)
             {
-                if(source == gameFlowButtons[i])
+                if (source == gameFlowButtons[i])
                 {
                     playerChoosenChoice = i;
                     PrintOutPlayerChoice(gameFlowLabels[0], Images.gameImages[i]);
@@ -178,17 +184,17 @@ namespace RockPaperScissorsLizardSpock
             }
         }
 
-        private void PrintOutPlayerChoice(PictureBox pb,Image image)
+        private void PrintOutPlayerChoice(PictureBox pb, Image image)
         {
             pb.Image = image;
         }
 
-        private int SetNumberOfGames(Object sender,EventArgs e)
+        private int SetNumberOfGames(Object sender, EventArgs e)
         {
             Object source = sender;
-            for(int i = 0; i < numberOfGamesButton.Length; i++)
+            for (int i = 0; i < numberOfGamesButton.Length; i++)
             {
-                if(source == numberOfGamesButton[i])
+                if (source == numberOfGamesButton[i])
                 {
                     buttonId = buttonNumbers[i];
                     selectedMode = roundNumbers[i];
@@ -222,9 +228,9 @@ namespace RockPaperScissorsLizardSpock
 
         private int ProcessButtonClicked()
         {
-            for(int i = 0; i < buttonNumbers.Length; i++)
+            for (int i = 0; i < buttonNumbers.Length; i++)
             {
-                if(buttonId == buttonNumbers[i])
+                if (buttonId == buttonNumbers[i])
                 {
                     level = numberOfRounds[i];
                     roundsRemaining = level;
@@ -256,7 +262,7 @@ namespace RockPaperScissorsLizardSpock
                 { GetGameMessage("playerWon"),()=>HasPlayerWon() },
                 { GetGameMessage("gameIsDraw"),()=>IsGameDrawn() }
             };
-            foreach(var gameCondition in winConditions)
+            foreach (var gameCondition in winConditions)
             {
                 if (gameCondition.Value())
                 {
@@ -297,7 +303,7 @@ namespace RockPaperScissorsLizardSpock
 
         private bool HasComputerWon()
         {
-           return conditions[computerChoosenChoice].Contains(playerChoosenChoice);
+            return conditions[computerChoosenChoice].Contains(playerChoosenChoice);
         }
 
         private bool HasPlayerWon()
@@ -310,14 +316,14 @@ namespace RockPaperScissorsLizardSpock
             return computerChoosenChoice == playerChoosenChoice;
         }
 
-       
+
 
         private int CalculateTargetWins(int totalRounds)
         {
             return (totalRounds / 2) + 1;
         }
 
-        private void PrintOutNumberOfGamesSelected(Label label,int numberOfGames)
+        private void PrintOutNumberOfGamesSelected(Label label, int numberOfGames)
         {
             label.Text = $"{numberOfGames}";
         }
@@ -337,14 +343,17 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-        private void UpdateScores(int[] scores, Label[]scoreLabel,int index)
+        private void UpdateScores(int[] scores, Label[] scoreLabel, int index)
         {
 
         }
 
         private void ResetGameImage()
         {
-
+            for (int i = 0; i < gameFlowLabels.Length; i++)
+            {
+                gameFlowLabels[i].Image = null;
+            }
         }
 
 
@@ -362,6 +371,8 @@ namespace RockPaperScissorsLizardSpock
         {
             return items;
         }
+
+        
 
 
 
