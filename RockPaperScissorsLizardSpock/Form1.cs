@@ -98,7 +98,6 @@ namespace RockPaperScissorsLizardSpock
                         if (values.Length == 2)
                         {
                             winConditionRules.Add(values[0].Trim(), values[1].Trim());
-                            //MessageBox.Show("FILE READ");
                         }
                     }
                 }
@@ -126,7 +125,15 @@ namespace RockPaperScissorsLizardSpock
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            ResetGameButton();
+        }
 
+        private void ResetGameButton()
+        {
+            ResetScores(gameScores, gameLabels);
+            ResetScores(gameRoundScores, gameRoundLabels);
+            SetButtonState(numberOfGamesButton, true, blueButtonImagePath);
+            SetButtonState(gameFlowButtons, false, redButtonImagePath);
         }
 
         private void ExitProgram()
