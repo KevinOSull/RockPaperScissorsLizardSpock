@@ -134,6 +134,7 @@ namespace RockPaperScissorsLizardSpock
             ResetScores(gameRoundScores, gameRoundLabels);
             SetButtonState(numberOfGamesButton, true, blueButtonImagePath);
             SetButtonState(gameFlowButtons, false, redButtonImagePath);
+            ResetNumberOfGames();
         }
 
         private void ExitProgram()
@@ -346,7 +347,8 @@ namespace RockPaperScissorsLizardSpock
             if (HasPlayerWon())
             {
                 return winnerIndex = 0;
-            }else if (HasComputerWon())
+            }
+            else if (HasComputerWon())
             {
                 return winnerIndex = 1;
             }
@@ -355,7 +357,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void CheckRoundWinner()
         {
-            for(int i = 0; i<gameScores.Length; i++)
+            for (int i = 0; i < gameScores.Length; i++)
             {
                 if (gameScores[i] >= level)
                 {
@@ -374,7 +376,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void CheckRoundTurns()
         {
-            for(int i = 0; i < gameRoundScores.Length; i++)
+            for (int i = 0; i < gameRoundScores.Length; i++)
             {
                 if (gameRoundScores[i] >= targetWins)
                 {
@@ -390,9 +392,9 @@ namespace RockPaperScissorsLizardSpock
 
         private void UpdateScores(int[] scores, Label[] scoreLabel, int index)
         {
-            for(int i = 0; i < scores.Length; i++)
+            for (int i = 0; i < scores.Length; i++)
             {
-                if(i == index)
+                if (i == index)
                 {
                     scores[i]++;
                     PrintOutCurrentScores(scores[i], scoreLabel[i]);
@@ -410,14 +412,20 @@ namespace RockPaperScissorsLizardSpock
 
         private void ResetScores(int[] scores, Label[] label)
         {
-            for(int i = 0; i < scores.Length; i++)
+            for (int i = 0; i < scores.Length; i++)
             {
                 scores[i] = 0;
                 PrintOutCurrentScores(scores[i], label[i]);
             }
         }
 
-        private void PrintOutCurrentScores(int scores,Label label)
+        private void ResetNumberOfGames()
+        {
+            roundsRemaining = 0;
+            PrintOutNumberOfGamesSelected(activeLabel, roundsRemaining);
+        }
+
+        private void PrintOutCurrentScores(int scores, Label label)
         {
             label.Text = $"{scores}";
         }
@@ -438,7 +446,17 @@ namespace RockPaperScissorsLizardSpock
             return items;
         }
 
-        
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
 
