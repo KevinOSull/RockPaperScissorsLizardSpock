@@ -216,7 +216,7 @@
             // 
             // playerRoundScore
             // 
-            playerRoundScore.Location = new Point(216, 329);
+            playerRoundScore.Location = new Point(208, 344);
             playerRoundScore.Name = "playerRoundScore";
             playerRoundScore.Size = new Size(15, 15);
             playerRoundScore.TabIndex = 11;
@@ -251,7 +251,7 @@
             // 
             // label2
             // 
-            label2.Location = new Point(168, 329);
+            label2.Location = new Point(168, 345);
             label2.Name = "label2";
             label2.Size = new Size(42, 15);
             label2.TabIndex = 15;
@@ -259,23 +259,25 @@
             // 
             // label3
             // 
-            label3.Location = new Point(197, 314);
+            label3.Location = new Point(197, 327);
             label3.Name = "label3";
             label3.Size = new Size(83, 15);
             label3.TabIndex = 16;
             label3.Text = "Round Score";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
-            label4.Location = new Point(229, 329);
+            label4.Location = new Point(221, 344);
             label4.Name = "label4";
             label4.Size = new Size(14, 15);
             label4.TabIndex = 17;
             label4.Text = "-";
+            label4.Click += label4_Click;
             // 
             // label5
             // 
-            label5.Location = new Point(445, 314);
+            label5.Location = new Point(445, 326);
             label5.Name = "label5";
             label5.Size = new Size(67, 15);
             label5.TabIndex = 18;
@@ -283,7 +285,7 @@
             // 
             // label6
             // 
-            label6.Location = new Point(415, 329);
+            label6.Location = new Point(415, 341);
             label6.Name = "label6";
             label6.Size = new Size(52, 15);
             label6.TabIndex = 19;
@@ -292,16 +294,16 @@
             // 
             // label1
             // 
-            label1.Location = new Point(464, 329);
+            label1.Location = new Point(471, 341);
             label1.Name = "label1";
-            label1.Size = new Size(19, 15);
+            label1.Size = new Size(12, 15);
             label1.TabIndex = 20;
             label1.Text = "-";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // label7
             // 
-            label7.Location = new Point(489, 329);
+            label7.Location = new Point(489, 341);
             label7.Name = "label7";
             label7.Size = new Size(64, 13);
             label7.TabIndex = 21;
@@ -310,7 +312,7 @@
             // 
             // computerRoundScore
             // 
-            computerRoundScore.Location = new Point(237, 329);
+            computerRoundScore.Location = new Point(229, 344);
             computerRoundScore.Name = "computerRoundScore";
             computerRoundScore.Size = new Size(17, 15);
             computerRoundScore.TabIndex = 22;
@@ -318,7 +320,7 @@
             // 
             // label9
             // 
-            label9.Location = new Point(252, 329);
+            label9.Location = new Point(241, 343);
             label9.Name = "label9";
             label9.Size = new Size(63, 15);
             label9.TabIndex = 23;
@@ -326,7 +328,7 @@
             // 
             // playerScore
             // 
-            playerScore.Location = new Point(457, 329);
+            playerScore.Location = new Point(457, 341);
             playerScore.Name = "playerScore";
             playerScore.Size = new Size(10, 15);
             playerScore.TabIndex = 24;
@@ -334,7 +336,7 @@
             // 
             // computerScore
             // 
-            computerScore.Location = new Point(473, 329);
+            computerScore.Location = new Point(480, 341);
             computerScore.Name = "computerScore";
             computerScore.Size = new Size(12, 15);
             computerScore.TabIndex = 25;
@@ -361,7 +363,7 @@
             // printOutWhoWonLabel
             // 
             printOutWhoWonLabel.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            printOutWhoWonLabel.Location = new Point(335, 283);
+            printOutWhoWonLabel.Location = new Point(241, 283);
             printOutWhoWonLabel.Name = "printOutWhoWonLabel";
             printOutWhoWonLabel.Size = new Size(341, 31);
             printOutWhoWonLabel.TabIndex = 28;
