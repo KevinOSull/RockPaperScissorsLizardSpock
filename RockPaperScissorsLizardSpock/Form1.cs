@@ -22,6 +22,7 @@ namespace RockPaperScissorsLizardSpock
         private int[] buttonNumbers = new int[] { BEST_OF_THREE, BEST_OF_FIVE, BEST_OF_TEN };
         private int[] numberOfRounds = new int[] { BEST_OF_THREE_GAMES, BEST_OF_FIVE_GAMES, BEST_OF_TEN_GAMES };
         private String[] roundNumbers = new String[] { "Best of Three", "Best of Five", "Best of Ten" };
+        private String[] choiceNames = new String[] { "Rock","Paper","Scissors","Lizard","Spock"};
         private Dictionary<string, string> winConditionRules = new Dictionary<string, string>();
         private Dictionary<int, int[]> conditions;
 
@@ -132,6 +133,7 @@ namespace RockPaperScissorsLizardSpock
         {
             ResetScores(gameScores, gameLabels);
             ResetScores(gameRoundScores, gameRoundLabels);
+            ResetGameImage();
             SetButtonState(numberOfGamesButton, true, blueButtonImagePath);
             SetButtonState(gameFlowButtons, false, redButtonImagePath);
             ResetNumberOfGames();
@@ -219,6 +221,7 @@ namespace RockPaperScissorsLizardSpock
         {
             computerChoosenChoice = GetComputerChoice();
             SetComputerImage();
+            DisplayChoices();
             CheckWhoWon();
             ClearImageTask();
 
@@ -282,6 +285,21 @@ namespace RockPaperScissorsLizardSpock
                     break;
                 }
             }
+        }
+
+        private void DisplayChoices()
+        {
+            string player = "Player";
+            string computer = "Computer ";
+            string playerChoiceName = choiceNames[playerChoosenChoice];
+            string computerChoiceName = choiceNames[computerChoosenChoice];
+            PrintOutChoices(player,playerChoseLabel, playerChoiceName);
+            PrintOutChoices(computer,computerChoseLabel, computerChoiceName);
+        }
+
+        private void PrintOutChoices(string name, Label label, string result)
+        {
+            label.Text = $"{name} chose {result}" ;
         }
 
         private string GetGameMessage(string key)
@@ -444,16 +462,6 @@ namespace RockPaperScissorsLizardSpock
         private PictureBox[] InitArray(params PictureBox[] items)
         {
             return items;
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
 
