@@ -23,6 +23,7 @@ namespace RockPaperScissorsLizardSpock
         private int[] numberOfRounds = new int[] { BEST_OF_THREE_GAMES, BEST_OF_FIVE_GAMES, BEST_OF_TEN_GAMES };
         private String[] roundNumbers = new String[] { "Best of Three", "Best of Five", "Best of Ten" };
         private String[] choiceNames = new String[] { "Rock","Paper","Scissors","Lizard","Spock"};
+        
         private Dictionary<string, string> winConditionRules = new Dictionary<string, string>();
         private Dictionary<int, int[]> conditions;
 
@@ -42,6 +43,7 @@ namespace RockPaperScissorsLizardSpock
         private string redButtonImagePath = "Resources/button_bg2.png";
 
         private Label[] numberOfGamesLabel;
+        private Label[] choiceLabels;
         private Button[] numberOfGamesButton;
         private Button[] gameFlowButtons;
         private PictureBox[] gameFlowLabels;
@@ -75,6 +77,7 @@ namespace RockPaperScissorsLizardSpock
             gameRoundLabels = InitArray(playerRoundScore, computerRoundScore);
             gameLabels = InitArray(playerScore, computerScore);
             gameFlowLabels = InitArray(playerChoice, computerChoice);
+            choiceLabels = InitArray(playerChoseLabel, computerChoseLabel);
             SetButtonState(gameFlowButtons, false, "Resources/button_bg2.png");
         }
 
@@ -319,14 +322,16 @@ namespace RockPaperScissorsLizardSpock
         {
             await RunDelayedTasks(3000, () => 
             {
-                ClearGameChoiceLabel();
+                ClearGameChoiceLabel(choiceLabels);
             });
         }
 
-        private void ClearGameChoiceLabel()
+        private void ClearGameChoiceLabel(Label[] label)
         {
-            playerChoseLabel.Text = "";
-            computerChoseLabel.Text = "";
+           for(int i = 0; i < label.Length; i++)
+            {
+                label[i].Text = "";
+            }
         }
 
         private async void ClearImageTask()
