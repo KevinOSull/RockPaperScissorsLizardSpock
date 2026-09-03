@@ -279,6 +279,7 @@ namespace RockPaperScissorsLizardSpock
                 {
                     PrintOutWhoWonGame(gameCondition.Key);
                     ScheduleClearScreenText();
+                    ClearGameChoiceText();
                     int winnerResultIndex = GetWinnerIndex();
                     UpdateScores(gameScores, gameLabels, winnerResultIndex);
                     CheckRoundWinner();
@@ -312,6 +313,20 @@ namespace RockPaperScissorsLizardSpock
             {
                 return "MESSAGE NOT FOUND FOR KEY! " + key;
             }
+        }
+
+        private async void ClearGameChoiceText()
+        {
+            await RunDelayedTasks(3000, () => 
+            {
+                ClearGameChoiceLabel();
+            });
+        }
+
+        private void ClearGameChoiceLabel()
+        {
+            playerChoseLabel.Text = "";
+            computerChoseLabel.Text = "";
         }
 
         private async void ClearImageTask()
