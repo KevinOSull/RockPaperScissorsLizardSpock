@@ -58,6 +58,8 @@
             playerChoice = new PictureBox();
             computerChoice = new PictureBox();
             printOutWhoWonLabel = new Label();
+            playerChoseLabel = new Label();
+            computerChoseLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)playerChoice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)computerChoice).BeginInit();
             SuspendLayout();
@@ -264,7 +266,6 @@
             label3.Size = new Size(83, 15);
             label3.TabIndex = 16;
             label3.Text = "Round Score";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -273,7 +274,6 @@
             label4.Size = new Size(14, 15);
             label4.TabIndex = 17;
             label4.Text = "-";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -369,12 +369,30 @@
             printOutWhoWonLabel.TabIndex = 28;
             printOutWhoWonLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // playerChoseLabel
+            // 
+            playerChoseLabel.Location = new Point(336, 187);
+            playerChoseLabel.Name = "playerChoseLabel";
+            playerChoseLabel.Size = new Size(147, 23);
+            playerChoseLabel.TabIndex = 29;
+            playerChoseLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // computerChoseLabel
+            // 
+            computerChoseLabel.Location = new Point(613, 187);
+            computerChoseLabel.Name = "computerChoseLabel";
+            computerChoseLabel.Size = new Size(165, 20);
+            computerChoseLabel.TabIndex = 30;
+            computerChoseLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SandyBrown;
             ClientSize = new Size(800, 450);
+            Controls.Add(computerChoseLabel);
+            Controls.Add(playerChoseLabel);
             Controls.Add(printOutWhoWonLabel);
             Controls.Add(computerChoice);
             Controls.Add(playerChoice);
@@ -443,5 +461,7 @@
         private PictureBox playerChoice;
         private PictureBox computerChoice;
         private Label printOutWhoWonLabel;
+        private Label playerChoseLabel;
+        private Label computerChoseLabel;
     }
 }
